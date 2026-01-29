@@ -1,0 +1,31 @@
+/* snipcart-custom.css */
+
+/* Cart background */
+.snipcart-cart-header,
+.snipcart-cart__content {
+  background-color: #000;   /* black background */
+  color: #fff;              /* white text */
+}
+
+/* Product line items */
+.snipcart-item-line {
+  border-bottom: 1px solid #444;
+}
+
+/* Buttons */
+.snipcart-button-primary {
+  background-color: #e63946; /* bold red for checkout */
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.snipcart-button-primary:hover {
+  background-color: #ff5252;
+}
+
+/* Cart totals */
+.snipcart-cart__footer {
+  background-color: #111;
+  color: #fff;
+}

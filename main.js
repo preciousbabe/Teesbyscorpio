@@ -90,3 +90,44 @@ instagramContent.forEach((item) => {
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappURL, "_blank");
   }
+
+
+async function loadTshirts() {
+  const res = await fetch('/public/tshirts.json');
+  const tshirts = await res.json();
+
+  const container = document.getElementById('tshirt-container');
+  container.innerHTML = '';
+
+  tshirts.forEach(t => {
+    if (!t.in_stock) return;
+
+    container.innerHTML += `
+      <div class="swiper-slide product-slide">
+        <div class="product-card">
+          <img src="${t.image}" alt="${t.name}" />
+          <button
+            class="snipcart-add-item"
+            data-item-id="${t.name.toLowerCase().replace(/\s+/g,'-')}"
+            data-item-name="${t.name}"
+            data-item-price="${t.price}"
+            data-item-url="/"
+            data-item-image="${t.image}"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    `;
+  });
+
+  new Swiper('.swiper', {
+    loop: true,
+    breakpoints: {
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', loadTshirts);

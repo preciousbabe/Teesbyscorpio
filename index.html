@@ -3,32 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Remix Icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+
+    <!-- Swiper CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
+
+    <!-- Your site styles -->
     <link rel="stylesheet" href="stlyes.css" />
 
-     <!-- Snipcart CSS & JS -->
+    <!-- Snipcart default CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css"
     />
-    <script
-      async
-      src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"
-    ></script>
 
-    <!-- Snipcart API Key -->
-    <div id="snipcart" data-api-key="NTZlNzU5YjMtOWFlNC00ODMwLThiZTQtYzI3N2JmNzI5NWE1NjM5MDUyOTAxMzg3NTc0MzY4"></div>
+    <!-- Your custom overrides -->
+    <link rel="stylesheet" href="snipcart-custom.css" />
 
     <title>Teesbyscorpio | T-Shirt</title>
   </head>
   <body>
+
     <div class="background">
       <span></span>
       <span></span>
@@ -69,112 +72,10 @@
     <h2 class="section__header">Shop the Collection</h2>
       <!-- Slider main container -->
       <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-       <div class="swiper-slide product-slide">
-  <div class="product-card">
-    <img
-      src="assets/minimalistic black t.png"
-      alt="Minimalistic Black Tee"
-      class="product-image"
-    />
-    <button
-      class="snipcart-add-item btn add-to-cart"
-      data-item-id="black-tee"
-      data-item-name="Minimalistic Black Tee"
-      data-item-price="25.00"
-      data-item-url="/"
-      data-item-image="assets/minimalistic black t.png"
-    >
-      Add to Cart
-    </button>
+  <div class="swiper-wrapper" id="tshirt-container">
+    <!-- T-shirts will be loaded here dynamically -->
   </div>
-</div>
-
-        <div class="swiper-slide product-slide">
-  <div class="product-card">
-    <img
-      src="assets/minimalistic pink t-.png"
-      alt="Minimalistic Black Tee"
-      class="product-image"
-    />
-    <button
-      class="snipcart-add-item btn add-to-cart"
-      data-item-id="Pink Tee"
-      data-item-name="Minimalistic pink Tee"
-      data-item-price="25.00"
-      data-item-url="/"
-      data-item-image="assets/minimalistic black t.png"
-    >
-      Add to Cart
-    </button>
   </div>
-</div>
-
-          <div class="swiper-slide product-slide">
-  <div class="product-card">
-    <img
-      src="assets/minimalistic eggshel.png"
-      alt="Minimalistic Black Tee"
-      class="product-image"
-    />
-    <button
-      class="snipcart-add-item btn add-to-cart"
-      data-item-id="black-tee"
-      data-item-name="Minimalistic Black Tee"
-      data-item-price="25.00"
-      data-item-url="/"
-      data-item-image="assets/minimalistic black t.png"
-    >
-      Add to Cart
-    </button>
-  </div>
-</div>
-
-          <div class="swiper-slide product-slide">
-  <div class="product-card">
-    <img
-      src="assets/minimalistic coral p.png"
-      alt="Minimalistic Black Tee"
-      class="product-image"
-    />
-    <button
-      class="snipcart-add-item btn add-to-cart"
-      data-item-id="black-tee"
-      data-item-name="Minimalistic Black Tee"
-      data-item-price="25.00"
-      data-item-url="/"
-      data-item-image="assets/minimalistic black t.png"
-    >
-      Add to Cart
-    </button>
-  </div>
-</div>
-
-         <div class="swiper-slide product-slide">
-  <div class="product-card">
-    <img
-      src="assets/minimalistic orange .png"
-      alt="Minimalistic Black Tee"
-      class="product-image"
-    />
-    <button
-      class="snipcart-add-item btn add-to-cart"
-      data-item-id="black-tee"
-      data-item-name="Minimalistic Black Tee"
-      data-item-price="25.00"
-      data-item-url="/"
-      data-item-image="assets/minimalistic black t.png"
-    >
-      Add to Cart
-    </button>
-  </div>
-</div>
-
-        </div>
-    </div>
-    <p class="t-center"> ← Slide to view → </p>
     </section>
 
     <section class="section__container service__container" id="about">
@@ -346,6 +247,17 @@
         Copyright © 2026 Teesbyscorpio. All rights reserved.
       </div>
     </footer>
+
+     <div
+      id="snipcart"
+      data-api-key="NTZlNzU5YjMtOWFlNC00ODMwLThiZTQtYzI3N2JmNzI5NWE1NjM5MDUyOTAxMzg3NTc0MzY4"
+    ></div>
+
+    <!-- Snipcart JS -->
+    <script
+      async
+      src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"
+    ></script>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
