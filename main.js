@@ -92,15 +92,17 @@ instagramContent.forEach((item) => {
   }
 
 
-async function loadTshirts() {
-  const res = await fetch('/public/tshirts.json');
-  const tshirts = await res.json();
+ async function loadTshirts() {
+  const res = await fetch('/content/tshirts');
+  if (!res.ok) return;
+
+  const files = await res.json(); 
 
   const container = document.getElementById('tshirt-container');
   container.innerHTML = '';
 
-  tshirts.forEach(t => {
-    if (!t.in_stock) return;
+  files.forEach(t => {
+    if (t.in_stock === false) return;
 
     container.innerHTML += `
       <div class="swiper-slide product-slide">

@@ -1,3 +1,5 @@
+
+// netlify/functions/build-tshirts.js
 import fs from "fs";
 import path from "path";
 
